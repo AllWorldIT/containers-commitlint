@@ -30,12 +30,12 @@ if [ $# -eq 0 ]; then
 fi
 
 # Check if we have a WORKDIR if not set it to /build
-if [ -z "$WORKDIR" ]; then
+if [ -z "$CI_PROJECT_DIR" ]; then
     mkdir /build
-    export WORKDIR=/build
+    export CI_PROJECT_DIR=/build
 fi
 # shellcheck disable=SC2164
-cd "$WORKDIR"
+cd "$CI_PROJECT_DIR"
 
 # Check if we have a commitlint configuration
 commitlint_config=

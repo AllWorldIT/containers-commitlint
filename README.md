@@ -52,7 +52,7 @@ We also provide consulting services to create and maintain Docker images to meet
 # Environment Variables
 
 
-## WORKDIR
+## CI_PROJECT_DIR
 
 Working directory.
 

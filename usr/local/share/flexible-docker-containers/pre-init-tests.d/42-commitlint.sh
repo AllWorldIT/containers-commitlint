@@ -26,9 +26,9 @@ git config --global init.defaultBranch main
 
 
 mkdir /build
-export WORKDIR=/build
+export CI_PROJECT_DIR=/build
 # shellcheck disable=SC2164
-cd "$WORKDIR"
+cd "$CI_PROJECT_DIR"
 
 
 fdc_notice "Preparing test data"

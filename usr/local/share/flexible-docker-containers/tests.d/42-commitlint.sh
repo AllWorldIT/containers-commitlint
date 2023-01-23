@@ -21,7 +21,7 @@
 
 
 # shellcheck disable=SC2164
-cd "$WORKDIR"
+cd "$CI_PROJECT_DIR"
 
 
 fdc_test_start "shellcheck" "Testing valid commit message"
