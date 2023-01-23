@@ -24,8 +24,8 @@
 echo "Running commitlint in '$PWD'..."
 echo
 echo "= = = = = = = = = = COMMITLINT REPORT = = = = = = = = = ="
-commitlint --verbose "$@"
-commitlint --verbose "$@" > .commitlint.log 2>&1
+commitlint --color --verbose "$@"
+commitlint --color --verbose "$@" > .commitlint.log 2>&1
 echo "= = = = = = = = = = = = = = = = = = = = = = = = = = = = ="
 echo
 
