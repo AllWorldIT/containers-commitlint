@@ -74,11 +74,8 @@ No commitlint configuration is required as defaults will be used, but if configu
 commitlint:
   image: registry.conarx.tech/containers/commitlint
   stage: validate
-  before_script:
-    - apk add --no-cache git
-    - npm install -g @commitlint/cli @commitlint/config-conventional
   script:
-    - npx commitlint --from ${CI_MERGE_REQUEST_DIFF_BASE_SHA} --to HEAD --verbose
+    - commitlint --color --verbose --from "${CI_MERGE_REQUEST_DIFF_BASE_SHA}" --to HEAD
   rules:
     - if: $CI_MERGE_REQUEST_IID
 ```
