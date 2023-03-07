@@ -21,7 +21,7 @@
 
 
 # If we have no command line arguments, set it to commitlint
-if [ "${#DOCKER_ARGS}" -eq 0 ]; then
+if [ "${#DOCKER_ARGS}" -eq 0 ] && [ -z "$FDC_CI" ]; then
     fdc_info "Setting up to run 'commitlint'"
     DOCKER_ARGS=(run-commitlint)
 fi
