@@ -20,7 +20,7 @@
 # IN THE SOFTWARE.
 
 
-# commitlint disable=SC2164
+# shellcheck disable=SC2164
 cd "$CI_PROJECT_DIR"
 
 
