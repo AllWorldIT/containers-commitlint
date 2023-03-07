@@ -20,22 +20,22 @@
 # IN THE SOFTWARE.
 
 
-# shellcheck disable=SC2164
+# commitlint disable=SC2164
 cd "$CI_PROJECT_DIR"
 
 
-fdc_test_start "shellcheck" "Testing valid commit message"
+fdc_test_start "commitlint" "Testing valid commit message"
 if ! run-commitlint --from "${CI_MERGE_REQUEST_DIFF_BASE_SHA}" --to HEAD --verbose; then
-    fdc_test_fail "shellcheck" "Valid commit message test failed"
+    fdc_test_fail "commitlint" "Valid commit message test failed"
     false
 fi
-fdc_test_pass "shellcheck" "Valid commit message passed"
+fdc_test_pass "commitlint" "Valid commit message passed"
 
 
-fdc_test_start "shellcheck" "Testing invalid commit message"
+fdc_test_start "commitlint" "Testing invalid commit message"
 git commit --amend -m "invalid commit"
 if run-commitlint --from "${CI_MERGE_REQUEST_DIFF_BASE_SHA}" --to HEAD --verbose; then
-    fdc_test_fail "shellcheck" "Invalid commit message failed"
+    fdc_test_fail "commitlint" "Invalid commit message failed"
     false
 fi
-fdc_test_pass "shellcheck" "Invalid commit message passed"
+fdc_test_pass "commitlint" "Invalid commit message passed"
