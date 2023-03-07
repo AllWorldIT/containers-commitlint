@@ -20,13 +20,10 @@
 # IN THE SOFTWARE.
 
 
-# Disable supervisord
-export FDC_DISABLE_SUPERVISORD=true
-
 # If we have no command line arguments, set it to commitlint
-if [ $# -eq 0 ]; then
+if [ "${#DOCKER_ARGS}" -eq 0 ]; then
     fdc_info "Setting up to run 'commitlint'"
-    set -- run-commitlint
+    DOCKER_ARGS=(run-commitlint)
 fi
 
 # Check if we have a WORKDIR if not set it to /build
