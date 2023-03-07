@@ -28,6 +28,9 @@ LABEL org.opencontainers.image.version   = "edge"
 LABEL org.opencontainers.image.base.name = "registry.conarx.tech/containers/alpine/edge"
 
 
+ENV FDC_DISABLE_SUPERVISORD=true
+
+
 RUN set -eux; \
 	true "Node"; \
 	apk add --no-cache \
