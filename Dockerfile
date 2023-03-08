@@ -29,6 +29,7 @@ LABEL org.opencontainers.image.base.name "registry.conarx.tech/containers/alpine
 
 
 ENV FDC_DISABLE_SUPERVISORD=true
+ENV FDC_QUIET=true
 
 
 RUN set -eux; \
