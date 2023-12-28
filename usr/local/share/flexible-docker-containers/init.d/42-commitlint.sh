@@ -55,7 +55,7 @@ do
         break
     fi
 done
-# Perhapts the configuration is in package.json
+# Perhaps the configuration is in package.json
 if [ -e package.json ] && grep -q "commitlint" package.json; then
     commitlint_config=package.json
 fi
