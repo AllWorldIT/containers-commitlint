@@ -19,11 +19,18 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-
-
 echo "Running commitlint in '$PWD'..."
+
+
+# If there is no commitlint config, add our own
+if [ ! -e commitlint.config.js ]; then
+    echo "Adding default commitlint config..."
+    echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+fi
+
 echo
 echo "= = = = = = = = = = COMMITLINT REPORT = = = = = = = = = ="
+commitlint --version
 commitlint --color --verbose "$@"
 commitlint --color --verbose "$@" > .commitlint.log 2>&1
 echo "= = = = = = = = = = = = = = = = = = = = = = = = = = = = ="
