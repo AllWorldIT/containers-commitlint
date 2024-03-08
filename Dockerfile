@@ -43,6 +43,7 @@ RUN set -eux; \
 # Install commitlint
 RUN set -eux; \
 	npm install -g @commitlint/cli @commitlint/config-conventional; \
+	# Remove things we dont need
 	rm -f /usr/local/share/flexible-docker-containers/tests.d/40-crond.sh; \
 	rm -f /usr/local/share/flexible-docker-containers/tests.d/90-healthcheck.sh
 
