@@ -21,12 +21,8 @@
 
 echo "Running commitlint in '$PWD'..."
 
-
-# If there is no commitlint config, add our own
-if [ ! -e commitlint.config.js ]; then
-    echo "Adding default commitlint config..."
-    echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
-fi
+# NK: Workaround braindead .... I can't
+export NODE_PATH=/usr/local/lib/node_modules
 
 echo
 echo "= = = = = = = = = = COMMITLINT REPORT = = = = = = = = = ="

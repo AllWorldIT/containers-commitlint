@@ -65,7 +65,7 @@ if [ -z "$commitlint_config" ]; then
     fdc_notice "No commitlint configuration found, using defaults"
     cat <<EOF > .commitlintrc.yaml
 extends:
-  - '$(npm root -g)/@commitlint/config-conventional'
+  - '@commitlint/config-conventional'
 EOF
 else
     fdc_notice "Using commitlint configuration '$commitlint_config'"
